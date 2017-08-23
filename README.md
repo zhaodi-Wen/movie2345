@@ -16,6 +16,7 @@
 
 
 ##在1.0版本里
+
 如图
 
 ![这里写图片描述](http://img.blog.csdn.net/20170823201121268?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
@@ -54,7 +55,7 @@ self.urlbaseitems = {}
 ## **下面是1.0版本和2.0版本的在函数构造上的一些区别**
  
 
- 1. `getUrls():`
+ ### 1. `getUrls():`
 
 **1.0版本前面是这样的：**
 ```
@@ -77,7 +78,7 @@ return self.urlbaseurls
 ```
 相比于1.0版本就多了一轮迭代循环和将字典urlbasepages的每一个key对应的value初始化为一个list
 
- 2.`spider()`
+ ### 2.`spider()`
 
 **1.0版本前面是这样的：**
  
@@ -96,7 +97,7 @@ for urlbase,urls in self.urlbaseurls.items():
 ```
 还是多了一行循环和一个初始化
 
- 3. `pipline()`
+### 3. `pipline()`
 
  **1.0版本前面是这样的：**
 	 
@@ -120,7 +121,7 @@ fileName = '电影.txt'.encode('GBK')
 ```
 还是一样多了一行循环和初始化
 
- 4.最后要说的是saveExcel这个自定义模块
+### 4.最后要说的是saveExcel这个自定义模块
  
  **1.0版本：**
 ```
