@@ -9,17 +9,17 @@
 
 ## 内容
 **这次我爬取的页面是[2345电影](http://dianying.2345.com/list/------.html)，由于在该页面上存在一个年代选项，具体看下这个截图:**
-![](http://img.blog.csdn.net/20170823180434078?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast) 
+![](https://github.com/zhaodi-Wen/movie2345/blob/master/img/1.png) 
 
 **所以我之前写了一个只是爬取2017年的电影project（以下我暂且身为1.0版本）,大家可以看下我的[GitHub爬取豆瓣电影排行榜的代码](https://github.com/zhaodi-Wen/DouBanMovie)，他们的框架结构一样，我也把它保存成excel的格式，后来我想对这个代码进行改进，毕竟这里面有那么多个年份的选项，所以就有了一个2.0版本**
 
 
 
-##在1.0版本里
+## 在1.0版本里
 
-如图
+如图  
 
-![这里写图片描述](http://img.blog.csdn.net/20170823201121268?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://github.com/zhaodi-Wen/movie2345/blob/master/img/2.png)
 
 大家可以看到
 
@@ -44,9 +44,9 @@ self.urlbaseitems = {}
 
 
 
-**当然在这两个版本里面，对于item的设置是一样的，都是**
+**当然在这两个版本里面，对于item的设置是一样的，都是**  
 
-![这里写图片描述](http://img.blog.csdn.net/20170823205341835?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://github.com/zhaodi-Wen/movie2345/blob/master/img/3.png)
 
 所以在这个大方向确定之后，只需要将1.0版本的基础上增加一个
 
@@ -144,8 +144,8 @@ def run(self,urlbaseitems):
 在每次循环中用是split()将urlbase分割开，目的是为了得到其中的年份数字，作为sheetname，这样就可以得到多个表了。
 
 
-当然这样运行完后得到的结果是这样的
-![这里写图片描述](http://img.blog.csdn.net/20170823214021937?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+当然这样运行完后得到的结果是这样的  
+![](https://github.com/zhaodi-Wen/movie2345/blob/master/img/4.png)
 
 可以看到评分是没有按照顺序的(当然我也不知道这评分是否可靠😂😂)，原因是该网站也没有按电影评分的高低对电影进行排序
 
@@ -157,9 +157,10 @@ for urlbase in self.urlbaseitems.keys():
 	self.urlbaseitems[urlbase].sort(key=lambda item:item.point,reverse= True)
 return self.urlbaseitems
 ```
-这里用到了lambda语法,其实他就是个迷你的函数，大家如果想要深入了解dict的各种类型的排序，可以参考[这篇博客](http://blog.csdn.net/ray_up/article/details/42084863)
-这样运行的结果是这样的
-(http://img.blog.csdn.net/20170823220507445?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvWmhhb2RpX1dlbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+这里用到了lambda语法,其实他就是个迷你的函数，大家如果想要深入了解dict的各种类型的排序，可以参考[这篇博客](http://blog.csdn.net/ray_up/article/details/42084863)  
+
+这样运行的结果是这样的  
+![](https://github.com/zhaodi-Wen/movie2345/blob/master/img/5.png)
 
 
 **具体的两个版本的源码我已经上传到我的Github上，大家可以参考下😘**
